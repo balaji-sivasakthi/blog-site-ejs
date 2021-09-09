@@ -1,5 +1,5 @@
 const express = require('express')
-const contact =express.Router()
+const single =express.Router()
 
 
 // app.set('view engine', 'ejs')
@@ -7,11 +7,11 @@ const contact =express.Router()
 // app.use('/',express.static(__dirname+'/Public'))
 
 
-contact.get('/',(req,res)=>{
+single.get('/',(req,res)=>{
 
-res.render('tech-contact')
+res.render('tech-single')
 
 
 })
 
-module.exports = contact
+module.exports = single

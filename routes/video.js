@@ -1,5 +1,5 @@
 const express = require('express')
-const contact =express.Router()
+const category02 =express.Router()
 
 
 // app.set('view engine', 'ejs')
@@ -7,11 +7,11 @@ const contact =express.Router()
 // app.use('/',express.static(__dirname+'/Public'))
 
 
-contact.get('/',(req,res)=>{
+category02.get('/',(req,res)=>{
 
-res.render('tech-contact')
+res.render('tech-category-02')
 
 
 })
 
-module.exports = contact
+module.exports = category02
