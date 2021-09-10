@@ -68,7 +68,7 @@
                                 <h3><%=data.title%></h3>
 
                                 <div class="blog-meta big-meta">
-                                    <small><a href="/single" title=""><%=((data.date.toDate()).toString()).slice(0,15)%></a></small>
+                                    <small><a href="/single" title=""><%=data.date%></a></small>
                                     <small><a href="/author" title="">by <%=author.name%></a></small>
                                     <small><a href="#" title=""><i class="fa fa-eye"></i> <%=data.views%></a></small>
                                 </div><!-- end meta -->
@@ -248,7 +248,7 @@
                                                     <img src="https://www.pngall.com/wp-content/uploads/5/User-Profile-PNG-High-Quality-Image.png" alt="" class="rounded-circle">
                                                 </a>
                                                 <div class="media-body">
-                                                    <h4 class="media-heading user_name"><%=e.user%><small><%=(e.date.toDate()).toString().slice(0,15) %></small></h4>
+                                                    <h4 class="media-heading user_name"><%=e.user%><small><%=e.date%></small></h4>
                                                     <p><%=e.comment%></p>
                                                     <!-- <a href="#" class="btn btn-primary btn-sm">Reply</a> -->
                                                 </div>
@@ -266,11 +266,10 @@
                                 <h4 class="small-title">Leave a Reply</h4>
                                 <div class="row">
                                     <div class="col-lg-12">
-                                        <form class="form-wrapper">
-                                            <input type="text" class="form-control" placeholder="Your name">
-                                            <input type="text" class="form-control" placeholder="Email address">
-                                            <input type="text" class="form-control" placeholder="Website">
-                                            <textarea class="form-control" placeholder="Your comment"></textarea>
+                                        <form method="post" class="form-wrapper">
+                                            <input type="text" class="form-control" name="name" placeholder="Your name">
+                                            <input type="text" class="form-control" name="email" placeholder="Email address">
+                                            <textarea class="form-control"          name ="comment" placeholder="Your comment"></textarea>
                                             <button type="submit" class="btn btn-primary">Submit Comment</button>
                                         </form>
                                     </div>
