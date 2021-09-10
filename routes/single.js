@@ -1,15 +1,45 @@
 const express = require('express')
 const single =express.Router()
+const db = require('../config').firestore()
+const getuser =require('../Utils/user')
+const getcomment =require('../Utils/comment')
 
 
-// app.set('view engine', 'ejs')
-// app.use('/views',express.static(__dirname+'/views'))
-// app.use('/',express.static(__dirname+'/Public'))
+//count the views
+function countView(docId){
+    db.collection('blog').doc(docId).get()
+    .then(result=>{
+        const data = result.data();
+        data.views++
+        db.collection('blog').doc(docId).set(data)
+    })
+}
+
+
 
 
 single.get('/',(req,res)=>{
 
-res.render('tech-single')
+    
+    var docId=req.query.id;
+    countView(docId);
+    db.collection('blog').doc(docId).get()
+    .then(async result=>{
+        console.log(result.data());
+        const data = result.data();
+        const comment = await getcomment(docId)
+        const user = await getuser()
+        console.log(comment)
+        
+        
+        res.render('tech-single',{data:data,comment:{}})
+    })
+    
+
+
+
+
+
 
 
 })
