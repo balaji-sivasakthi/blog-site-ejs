@@ -1,5 +1,5 @@
 const express = require('express')
-const category03 =express.Router()
+const Reviews =express.Router()
 
 
 // app.set('view engine', 'ejs')
@@ -7,11 +7,11 @@ const category03 =express.Router()
 // app.use('/',express.static(__dirname+'/Public'))
 
 
-category03.get('/',(req,res)=>{
+Reviews.get('/',(req,res)=>{
 
 res.render('tech-category-03')
 
 
 })
 
-module.exports = category03
+module.exports = Reviews

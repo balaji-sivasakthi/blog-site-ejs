@@ -1,5 +1,5 @@
 const express = require('express')
-const category02 =express.Router()
+const Video =express.Router()
 
 
 // app.set('view engine', 'ejs')
@@ -7,11 +7,11 @@ const category02 =express.Router()
 // app.use('/',express.static(__dirname+'/Public'))
 
 
-category02.get('/',(req,res)=>{
+Video.get('/',(req,res)=>{
 
 res.render('tech-category-02')
 
 
 })
 
-module.exports = category02
+module.exports = Video
