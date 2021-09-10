@@ -1,9 +1,9 @@
 const db = require('../config').firestore()
 
 //user
-function user(userId){
+function author(Id){
     return new Promise((resolve,reject)=>{
-        db.collection('users').doc(userId).get()
+        db.collection('author').doc(Id).get()
         .then(result=>{
             const data = result.data()
             resolve(data)
@@ -11,4 +11,4 @@ function user(userId){
     })
 }
 
-module.exports = user
+module.exports = author

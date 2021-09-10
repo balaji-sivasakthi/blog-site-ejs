@@ -1,9 +1,10 @@
 const express = require('express')
 const single =express.Router()
 const db = require('../config').firestore()
-const getuser =require('../Utils/user')
-const getcomment =require('../Utils/comment')
 
+const getcomment =require('../Utils/comment')
+const commentWithName = require('../Utils/commentWithName')
+const getAuthor = require('../Utils/author')
 
 //count the views
 function countView(docId){
@@ -15,9 +16,6 @@ function countView(docId){
     })
 }
 
-
-
-
 single.get('/',(req,res)=>{
 
     
@@ -28,11 +26,11 @@ single.get('/',(req,res)=>{
         console.log(result.data());
         const data = result.data();
         const comment = await getcomment(docId)
-        const user = await getuser()
-        console.log(comment)
+        const author  = await getAuthor(data.author)
+        // console.log("===Commment Name with user details=====")
+        //console.log(await commentWithName(comment))
         
-        
-        res.render('tech-single',{data:data,comment:{}})
+        res.render('tech-single',{data:data,comment:await commentWithName(comment),author:author})
     })
     
 
