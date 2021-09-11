@@ -1,4 +1,4 @@
-const getuser =require('../Utils/user')
+const getuser =require('../Modules/user')
 async function commentWithName(comment){
     var result = []
 

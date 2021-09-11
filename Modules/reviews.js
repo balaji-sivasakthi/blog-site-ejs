@@ -3,7 +3,7 @@ const db = require('../config').firestore()
 //user
 function reviews(n){
     return new Promise((resolve,reject)=>{
-        db.collection('reviews').get()
+        db.collection('blog').where('tag','==','reviews').get()
         .then(result=>{
             var reviews =[]
             var count =0

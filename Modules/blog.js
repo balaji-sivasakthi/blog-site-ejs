@@ -1,9 +1,11 @@
+const { query } = require('express')
+
 const db = require('../config').firestore()
 
 //user
 function blog(n){
     return new Promise((resolve,reject)=>{
-        db.collection('blog').get()
+        db.collection('blog').orderBy('date','desc').get()
         .then(result=>{
             var blog =[]
             var count =0

@@ -7,8 +7,9 @@ const GadgetRouter = require('./routes/gadget')
 const ReviewsRouter = require('./routes/reviews')
 const contactRouter = require('./routes/contact')
 const singleRouter = require('./routes/single')
-const getblog = require('./Utils/blog')
-const getreviews = require('./Utils/reviews')
+const getblog = require('./Modules/blog')
+const getreviews = require('./Modules/reviews')
+const gettag = require('./Modules/tag')
 
 app.use(express.urlencoded({extended:true}))
 app.use(express.json())
@@ -23,13 +24,16 @@ app.use('/author',authorRouter)
 app.use('/gadget',GadgetRouter)
 app.use('/video',VideoRouter)
  app.use('/reviews',ReviewsRouter)
-/app.use('/contact',contactRouter)
+app.use('/contact',contactRouter)
 app.use('/single',singleRouter)
 
 app.get('/' ,async (req , res)=>{
+   
    var data = await getblog(15)
    var reviews = await getreviews(3)
-   res.render('index',{data:data,reviews:reviews})
+   
+   var tag = await gettag(4)
+   res.render('index',{data:data,reviews:reviews,tag:tag})
    
 
 })

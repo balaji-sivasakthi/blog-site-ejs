@@ -1,17 +1,15 @@
+const { query } = require('express')
 const express = require('express')
-const Reviews =express.Router()
+const reviews =express.Router()
+const getblog= require('../Modules/blog')
+const getreviews= require('../Modules/reviews')
 
-
-// app.set('view engine', 'ejs')
-// app.use('/views',express.static(__dirname+'/views'))
-// app.use('/',express.static(__dirname+'/Public'))
-
-
-Reviews.get('/',(req,res)=>{
-
-res.render('tech-category-03')
+reviews.get('/',async(req,res)=>{
+ var data = await getblog(15)
+  var reviews = await getreviews(3)
+res.render('tech-category-03',{data:data,reviews:reviews})
 
 
 })
 
-module.exports = Reviews
+module.exports = reviews

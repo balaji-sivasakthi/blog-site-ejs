@@ -72,7 +72,7 @@
 
                     <div class="second-slot">
                         <div class="masonry-box post-media">
-                             <img src="<%=data[1].shortbanner%>" alt="" class="img-fluid">
+                             <img src="<%=data[1].shortbanner%>" alt="" class="img-fluid" width="394" height="449">
                              <div class="shadoweffect">
                                 <div class="shadow-desc">
                                     <div class="blog-meta">
@@ -114,7 +114,7 @@
                                 <h4 class="pull-left">Recent News <a href="#"><i class="fa fa-rss"></i></a></h4>
                             </div><!-- end blog-top -->
 
-                            <% for(let i =0; i<3;i++){%>
+                            <% for(let i =3; i<6;i++){%>
                             <section class="blog-list clearfix">
                                 <div class="blog-box row">
                                     <div class="col-md-4">
@@ -130,9 +130,9 @@
                                         <h4><a href="/single?id=<%=data[i].id%>" title=""><%=data[i].title%></a></h4>
                                         <p><%=data[i].short%></p>
                                         <small class="firstsmall"><a class="bg-orange" href="/gadget" title=""><%=data[i].tag%></a></small>
-                                        <small><a href="/single" title=""><%=data[i].date%></a></small>
+                                        <small><a href="/single?id=<%=data[i].id%>" title=""><%=data[i].date%></a></small>
                                         <small><a href="/author" title="">by <%=data[i].by%></a></small>
-                                        <small><a href="/single" title=""><i class="fa fa-eye"></i><%=data[i].views%></a></small>
+                                        <small><a href="/single?id=<%=data[i].id%>" title=""><i class="fa fa-eye"></i><%=data[i].views%></a></small>
                                     </div><!-- end meta -->
                                 </div><!-- end blog-box -->
 
@@ -153,7 +153,7 @@
                                 </div><!-- end row -->
 
                                 <hr class="invis">
-                                <% for(let i =3; i<11;i++){%>
+                                <% for(let i =6; i<13;i++){%>
                                     <section class="blog-list clearfix">
                                         <div class="blog-box row">
                                             <div class="col-md-4">
@@ -302,44 +302,44 @@
                                 <h2 class="widget-title">Recent Reviews</h2>
                                 <div class="blog-list-widget">
                                     <div class="list-group">
-                                        <a href="/single?id=<%=reviews[0].id%>" class="list-group-item list-group-item-action flex-column align-items-start">
+                                        <a href="/reviews?id=<%=reviews[0].id%>" class="list-group-item list-group-item-action flex-column align-items-start">
                                             <div class="w-100 justify-content-between">
                                                 <img src="<%=reviews[0].banner%>" alt="" class="img-fluid float-left">
                                                 <h5 class="mb-1"><%=reviews[0].title%></h5>
                                                 <span class="rating">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
+                                                    <%var star =reviews[0].star%>
+                                                    <%for(i=0;i<star;i++){%>
+                                                        <i class="fa fa-star"></i>
+                                                    <%}%>
+
+                                                    
+                                                    
                                                 </span>
                                             </div>
                                         </a>
 
-                                        <a href="/single?id=<%=reviews[1].id%>" class="list-group-item list-group-item-action flex-column align-items-start">
+                                        <a href="/reviews?id=<%=reviews[1].id%>" class="list-group-item list-group-item-action flex-column align-items-start">
                                             <div class="w-100 justify-content-between">
                                                 <img src="<%=reviews[1].banner%>" alt="" class="img-fluid float-left">
                                                 <h5 class="mb-1"><%=reviews[1].title%></h5>
                                                 <span class="rating">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
+                                                    <%var star =reviews[1].star%>
+                                                    <%for(i=0;i<star;i++){%>
+                                                        <i class="fa fa-star"></i>
+                                                    <%}%>
                                                 </span>
                                             </div>
                                         </a>
 
-                                        <a href="/single?id=<%=reviews[2].id%>" class="list-group-item list-group-item-action flex-column align-items-start">
+                                        <a href="/reviews?id=<%=reviews[2].id%>" class="list-group-item list-group-item-action flex-column align-items-start">
                                             <div class="w-100 last-item justify-content-between">
                                                 <img src="<%=reviews[2].banner%>" alt="" class="img-fluid float-left">
                                                 <h5 class="mb-1"><%=reviews[2].title%></h5>
                                                 <span class="rating">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
+                                                    <%var star =reviews[2].star%>
+                                                    <%for(i=0;i<star;i++){%>
+                                                        <i class="fa fa-star"></i>
+                                                    <%}%>
                                                 </span>
                                             </div>
                                         </a>
