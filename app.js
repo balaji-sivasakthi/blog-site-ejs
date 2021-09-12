@@ -38,5 +38,4 @@ app.get('/' ,async (req , res)=>{
 
 })
 
-const port = 3000
-app.listen(port, () => console.log(`Example app listening on port 3000!`))
+app.listen(process.env.PORT||3000,()=>{console.log("Running...."+process.env.PORT||3000)})
