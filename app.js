@@ -9,7 +9,7 @@ const contactRouter = require('./routes/contact')
 const singleRouter = require('./routes/single')
 const getblog = require('./Modules/blog')
 const getreviews = require('./Modules/reviews')
-// const gettag = require('./Modules/tag')
+const gettag = require('./Modules/tag')
 
 app.use(express.urlencoded({extended:true}))
 app.use(express.json())
@@ -32,16 +32,23 @@ app.get('/' ,async (req , res)=>{
     var data = await getblog(15)
    
    var reviews = await getreviews(3)
-   if(data.length>2){
-      res.render('index',{data:data,reviews:reviews})
+   var tag = await gettag()
+   console.log(tag)
+   if(data.length>3){
+      //tag
+      //['sciene','tech']
+      //[[{},{}],[{}{}]]
+      res.render('index',{data:data,reviews:reviews,tagKey:Object.keys(tag),tagValue:Object.values(tag)})
    }else{
       res.send("<h1>Something Went Wrong</h1>")
    }
    
-   // var tag = await gettag()
-   
+  
    
 
 })
 
 app.listen(process.env.PORT||5000,()=>{console.log("Running...."+process.env.PORT||5000)})
+
+
+

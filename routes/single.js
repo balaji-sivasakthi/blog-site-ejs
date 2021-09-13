@@ -7,13 +7,13 @@ const commentWithName = require('../Modules/commentWithName')
 const getAuthor = require('../Modules/author')
 const getBlog = require('../Modules/blog')
 const countView = require('../Modules/count')
-
+const gettag = require('../Modules/tag')
 
 
 //count the views
 
 
-single.get('/',(req,res)=>{
+single.get('/',async (req,res)=>{
     
     var docId=req.query.id;
     countView('blog',docId);
@@ -24,11 +24,12 @@ single.get('/',(req,res)=>{
         const comment = await getcomment(docId)
         const author  = await getAuthor(data.author)
         const blog = await getBlog()
+        const tag = await gettag()
         console.log(blog)
         // console.log("===Commment Name with user details=====")
         //console.log(await commentWithName(comment))
         
-        res.render('tech-single',{data:data,comment:await commentWithName(comment),author:author,blog:blog})
+        res.render('tech-single',{data:data,comment:await commentWithName(comment),author:author,blog:blog,tagKey:Object.keys(tag),tagValue:Object.values(tag)})
     })
     
 })
