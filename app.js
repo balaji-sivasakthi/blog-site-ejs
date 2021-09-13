@@ -9,7 +9,7 @@ const contactRouter = require('./routes/contact')
 const singleRouter = require('./routes/single')
 const getblog = require('./Modules/blog')
 const getreviews = require('./Modules/reviews')
-const gettag = require('./Modules/tag')
+// const gettag = require('./Modules/tag')
 
 app.use(express.urlencoded({extended:true}))
 app.use(express.json())
@@ -29,14 +29,19 @@ app.use('/single',singleRouter)
 
 app.get('/' ,async (req , res)=>{
    
-   var data = await getblog(15)
-   var reviews = await getreviews(3)
+    var data = await getblog(15)
    
-   var tag = await gettag(4)
-   res.render('index',{data:data,reviews:reviews,tag:tag})
+   var reviews = await getreviews(3)
+   if(data.length>2){
+      res.render('index',{data:data,reviews:reviews})
+   }else{
+      res.send("<h1>Something Went Wrong</h1>")
+   }
+   
+   // var tag = await gettag()
+   
    
 
 })
 
-const port = 3000
-app.listen(port, () => console.log(`Example app listening on port 3000!`))
+app.listen(process.env.PORT||5000,()=>{console.log("Running...."+process.env.PORT||5000)})

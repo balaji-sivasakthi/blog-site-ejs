@@ -61,7 +61,7 @@
                                 <div class="shadow-desc">
                                     <div class="blog-meta">
                                         <span class="bg-orange"><a href="/<%=(data[0].tag).toLowerCase()%>" title=""><%=data[0].tag%></a></span>
-                                        <h4><a href="/" title=""><%=data[0].title%></a></h4>
+                                        <h4><a href="/single?id=<%=data[1].id%>" title=""><%=data[0].title%></a></h4>
                                         <small><a href="/single?id=<%=data[0].id%>" title=""><%=data[0].date%></a></small>
                                         <small><a href="/author" title="">by <%=data[0].by%></a></small>
                                     </div><!-- end meta -->
@@ -72,7 +72,7 @@
 
                     <div class="second-slot">
                         <div class="masonry-box post-media">
-                             <img src="<%=data[1].shortbanner%>" alt="" class="img-fluid" width="394" height="449">
+                             <img src="<%=data[1].banner%>" alt="" class="img-fluid">
                              <div class="shadoweffect">
                                 <div class="shadow-desc">
                                     <div class="blog-meta">
@@ -88,7 +88,7 @@
 
                       <div class="last-slot">
                         <div class="masonry-box post-media">
-                             <img src="<%=data[2].shortbanner%>" alt="" class="img-fluid " width="394" height="449" >
+                             <img src="<%=data[2].banner%>" alt="" class="img-fluid " >
                              <div class="shadoweffect">
                                 <div class="shadow-desc">
                                     <div class="blog-meta">
@@ -114,7 +114,7 @@
                                 <h4 class="pull-left">Recent News <a href="#"><i class="fa fa-rss"></i></a></h4>
                             </div><!-- end blog-top -->
 
-                            <% for(let i =3; i<6;i++){%>
+                            <% for(let i =0; i<3;i++){%>
                             <section class="blog-list clearfix">
                                 <div class="blog-box row">
                                     <div class="col-md-4">
@@ -153,7 +153,7 @@
                                 </div><!-- end row -->
 
                                 <hr class="invis">
-                                <% for(let i =6; i<13;i++){%>
+                                <% for(let i =0; i<3;i++){%>
                                     <section class="blog-list clearfix">
                                         <div class="blog-box row">
                                             <div class="col-md-4">
@@ -302,12 +302,12 @@
                                 <h2 class="widget-title">Recent Reviews</h2>
                                 <div class="blog-list-widget">
                                     <div class="list-group">
-                                        <a href="/reviews?id=<%=reviews[0].id%>" class="list-group-item list-group-item-action flex-column align-items-start">
+                                        <a href="/reviews?id=<%=data[0].id%>" class="list-group-item list-group-item-action flex-column align-items-start">
                                             <div class="w-100 justify-content-between">
-                                                <img src="<%=reviews[0].banner%>" alt="" class="img-fluid float-left">
-                                                <h5 class="mb-1"><%=reviews[0].title%></h5>
+                                                <img src="<%=data[0].banner%>" alt="" class="img-fluid float-left">
+                                                <h5 class="mb-1"><%=data[0].title%></h5>
                                                 <span class="rating">
-                                                    <%var star =reviews[0].star%>
+                                                    <%var star =data[0].star%>
                                                     <%for(i=0;i<star;i++){%>
                                                         <i class="fa fa-star"></i>
                                                     <%}%>
@@ -318,12 +318,12 @@
                                             </div>
                                         </a>
 
-                                        <a href="/reviews?id=<%=reviews[1].id%>" class="list-group-item list-group-item-action flex-column align-items-start">
+                                        <a href="/reviews?id=<%=data[1].id%>" class="list-group-item list-group-item-action flex-column align-items-start">
                                             <div class="w-100 justify-content-between">
-                                                <img src="<%=reviews[1].banner%>" alt="" class="img-fluid float-left">
-                                                <h5 class="mb-1"><%=reviews[1].title%></h5>
+                                                <img src="<%=data[1].banner%>" alt="" class="img-fluid float-left">
+                                                <h5 class="mb-1"><%=data[1].title%></h5>
                                                 <span class="rating">
-                                                    <%var star =reviews[1].star%>
+                                                    <%var star =data[1].star%>
                                                     <%for(i=0;i<star;i++){%>
                                                         <i class="fa fa-star"></i>
                                                     <%}%>
@@ -331,12 +331,12 @@
                                             </div>
                                         </a>
 
-                                        <a href="/reviews?id=<%=reviews[2].id%>" class="list-group-item list-group-item-action flex-column align-items-start">
+                                        <a href="/reviews?id=<%=data[2].id%>" class="list-group-item list-group-item-action flex-column align-items-start">
                                             <div class="w-100 last-item justify-content-between">
-                                                <img src="<%=reviews[2].banner%>" alt="" class="img-fluid float-left">
-                                                <h5 class="mb-1"><%=reviews[2].title%></h5>
+                                                <img src="<%=data[2].banner%>" alt="" class="img-fluid float-left">
+                                                <h5 class="mb-1"><%=data[2].title%></h5>
                                                 <span class="rating">
-                                                    <%var star =reviews[2].star%>
+                                                    <%var star =data[2].star%>
                                                     <%for(i=0;i<star;i++){%>
                                                         <i class="fa fa-star"></i>
                                                     <%}%>

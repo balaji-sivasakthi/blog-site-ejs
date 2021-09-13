@@ -1,13 +1,13 @@
-const db = require ('../config').firestore()
+// const db = require ('../config').firestore()
 
 
-function tag(n){
-    return new Promise((resolve,reject)=>{
-        db.collection('tag').get()
-        .then(result=>{
+// function tag(){
+//     return new Promise((resolve,reject)=>{
+//         db.collection('tag').get()
+//         .then(result=>{
             
-        })
-    })
-}
+//         })
+//     })
+// }
 
-module.exports = tag
+// module.exports = tag
