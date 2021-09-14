@@ -9,10 +9,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
     <!-- Site Metas -->
-    <title>Tech Blog - Stylish Magazine Blog Template</title>
+    <title><%=data.title%></title>
     <meta name="keywords" content="">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="<%=data.short%>">
+    <meta name="author" content="<%=data.by%>">
     
     <!-- Site Icons -->
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
@@ -75,8 +75,8 @@
 
                                 <div class="post-sharing">
                                     <ul class="list-inline">
-                                        <li><a href="#" class="fb-button btn btn-primary"><i class="fa fa-facebook"></i> <span class="down-mobile">Share on Facebook</span></a></li>
-                                        <li><a href="#" class="tw-button btn btn-primary"><i class="fa fa-twitter"></i> <span class="down-mobile">Tweet on Twitter</span></a></li>
+                                        <li><a id="facebook-share-link"class="fb-button btn btn-primary"><i class="fa fa-facebook"></i> <span class="down-mobile">Share on Facebook</span></a></li>
+                                        <!-- <li><a id="instagram-share-link"  class="tw-button btn btn-danger"><i class="fa fa-instagram"></i> <span class="down-mobile">Share on Instagram</span></a></li> -->
                                       
                                     </ul>
                                 </div><!-- end post-sharing -->
@@ -111,7 +111,7 @@
                                 <div class="post-sharing">
                                     <ul class="list-inline">
                                         <li><a id="facebook-share-link"class="fb-button btn btn-primary"><i class="fa fa-facebook"></i> <span class="down-mobile">Share on Facebook</span></a></li>
-                                        <li><a href="" class="tw-button btn btn-danger"><i class="fa fa-instagram"></i> <span class="down-mobile">Share on Instagram</span></a></li>
+                                        <!-- <li><a id="instagram-share-link"  class="tw-button btn btn-primary"><i class="fa fa-instagram"></i> <span class="down-mobile">Share on Instagram</span></a></li> -->
                                         
                                     </ul>
                                 </div><!-- end post-sharing -->
@@ -471,8 +471,10 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/custom.js"></script>
      <script>
+        
          var url=window.location.href;
          document.getElementById("facebook-share-link").setAttribute("href","https://www.facebook.com/sharer.php?u="+ url)
+        
      </script>
 </body>
 </html>
