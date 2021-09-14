@@ -73,29 +73,29 @@
                     <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
                         <div class="page-wrapper">
                             <div class="blog-list clearfix">
-                                <% for(i=0;i<8;i++){%>
+                                <% reviews.forEach(e=>{%>
                                 <div class="blog-box row">
                                     
                                     <div class="col-md-4">
                                         <div class="post-media">
-                                            <a href="/single?id=<%=data[i].id%>" title="">
-                                                <img src="<%=data[i].banner%>" alt="" class="img-fluid">
+                                            <a href="/single?id=<%=e.id%>" title="">
+                                                <img src="<%=e.banner%>" alt="" class="img-fluid">
                                                 <div class="hovereffect"></div>
                                             </a>
                                         </div><!-- end media -->
                                     </div><!-- end col -->
 
                                     <div class="blog-meta big-meta col-md-8">
-                                        <h4><a href="/single" title=""><%=data[i].title%></p>
-                                        <small class="firstsmall"><a class="bg-orange" href="/reviews" title=""><%=data[i].tag%></a></small>
-                                        <small><a href="/single" title=""><%=data[i].date%></a></small>
-                                        <small><a href="/author" title="">By <%=data[i].by%></a></small>
-                                        <small><a href="/single" title=""><i class="fa fa-eye"></i> <%=data[i].views%></a></small>
+                                        <h4><a href="/single?id=<%=e.id%>" title=""><%=e.title%></p>
+                                        <small class="firstsmall"><a class="bg-orange" href="/reviews" title=""><%=e.tag%></a></small>
+                                        <small><a href="/single" title=""><%=e.date%></a></small>
+                                        <small><a href="/author" title="">By <%=e.by%></a></small>
+                                        <small><a href="/single" title=""><i class="fa fa-eye"></i> <%=e.views%></a></small>
                                     </div><!-- end meta -->
                                 </div><!-- end blog-box -->
 
                                 <hr class="invis">
-                               <%}%>
+                               <%})%>
                                
                             </div><!-- end blog-list -->
                         </div><!-- end page-wrapper -->

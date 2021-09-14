@@ -77,7 +77,7 @@
                                     <ul class="list-inline">
                                         <li><a href="#" class="fb-button btn btn-primary"><i class="fa fa-facebook"></i> <span class="down-mobile">Share on Facebook</span></a></li>
                                         <li><a href="#" class="tw-button btn btn-primary"><i class="fa fa-twitter"></i> <span class="down-mobile">Tweet on Twitter</span></a></li>
-                                        <li><a href="#" class="gp-button btn btn-primary"><i class="fa fa-google-plus"></i></a></li>
+                                      
                                     </ul>
                                 </div><!-- end post-sharing -->
                             </div><!-- end title -->
@@ -94,11 +94,9 @@
 
                                 </div><!-- end pp -->
 
-                                <img src="<%=data['banner2']%>" alt="" class="img-fluid img-fullwidth">
+                                
 
-                                <div class="pp">
-                                    <%-data['para2']%>
-                                </div><!-- end pp -->
+                              
                             </div><!-- end content -->
 
                             <div class="blog-title-area">
@@ -112,9 +110,9 @@
 
                                 <div class="post-sharing">
                                     <ul class="list-inline">
-                                        <li><a href="#" class="fb-button btn btn-primary"><i class="fa fa-facebook"></i> <span class="down-mobile">Share on Facebook</span></a></li>
-                                        <li><a href="#" class="tw-button btn btn-primary"><i class="fa fa-twitter"></i> <span class="down-mobile">Tweet on Twitter</span></a></li>
-                                        <li><a href="#" class="gp-button btn btn-primary"><i class="fa fa-google-plus"></i></a></li>
+                                        <li><a id="facebook-share-link"class="fb-button btn btn-primary"><i class="fa fa-facebook"></i> <span class="down-mobile">Share on Facebook</span></a></li>
+                                        <li><a href="" class="tw-button btn btn-danger"><i class="fa fa-instagram"></i> <span class="down-mobile">Share on Instagram</span></a></li>
+                                        
                                     </ul>
                                 </div><!-- end post-sharing -->
                             </div><!-- end title -->
@@ -472,6 +470,9 @@
     <script src="js/tether.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/custom.js"></script>
-
+     <script>
+         var url=window.location.href;
+         document.getElementById("facebook-share-link").setAttribute("href","https://www.facebook.com/sharer.php?u="+ url)
+     </script>
 </body>
 </html>
