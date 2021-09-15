@@ -23,7 +23,7 @@ single.get('/',async (req,res)=>{
         const data = result.data();
         const comment = await getcomment(docId)
         const author  = await getAuthor(data.author)
-        const blog = await getBlog()
+        const blog = await getBlog(8)
         const tag = await gettag()
         console.log(blog)
         // console.log("===Commment Name with user details=====")

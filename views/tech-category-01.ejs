@@ -135,27 +135,27 @@
                                 <h2 class="widget-title">Popular Posts</h2>
                                 <div class="blog-list-widget">
                                     <div class="list-group">
-                                        <a href="/single" class="list-group-item list-group-item-action flex-column align-items-start">
+                                        <a href="/single?id=<%=data[0].id%>" class="list-group-item list-group-item-action flex-column align-items-start">
                                             <div class="w-100 justify-content-between">
-                                                <img src="upload/tech_blog_08.jpg" alt="" class="img-fluid float-left">
-                                                <h5 class="mb-1">5 Beautiful buildings you need..</h5>
-                                                <small>12 Jan, 2016</small>
+                                                <img src="<%=data[0].banner%>" alt="" class="img-fluid float-left">
+                                                <h5 class="mb-1"><%=data[0].title%></h5>
+                                                <small><%=data[0].date%></small>
                                             </div>
                                         </a>
 
-                                        <a href="/single" class="list-group-item list-group-item-action flex-column align-items-start">
+                                        <a href="/single?id=<%=data[1].id%>" class="list-group-item list-group-item-action flex-column align-items-start">
                                             <div class="w-100 justify-content-between">
-                                                <img src="upload/tech_blog_01.jpg" alt="" class="img-fluid float-left">
-                                                <h5 class="mb-1">Let's make an introduction for..</h5>
-                                                <small>11 Jan, 2016</small>
+                                                <img src="<%=data[1].banner%>" alt="" class="img-fluid float-left">
+                                                <h5 class="mb-1"><%=data[1].title%></h5>
+                                                <small><%=data[1].date%></small>
                                             </div>
                                         </a>
 
-                                        <a href="/single" class="list-group-item list-group-item-action flex-column align-items-start">
+                                        <a href="/single?id=<%=data[2].id%>" class="list-group-item list-group-item-action flex-column align-items-start">
                                             <div class="w-100 last-item justify-content-between">
-                                                <img src="upload/tech_blog_03.jpg" alt="" class="img-fluid float-left">
-                                                <h5 class="mb-1">Did you see the most beautiful..</h5>
-                                                <small>07 Jan, 2016</small>
+                                                <img src="<%=data[2].banner%>" alt="" class="img-fluid float-left">
+                                                <h5 class="mb-1"><%=data[2].title%></h5>
+                                                <small><%=data[2].date%></small>
                                             </div>
                                         </a>
                                     </div>

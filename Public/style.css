@@ -1674,3 +1674,23 @@ hr.invis3 {
     -o-border-radius: 50%;
     border-radius: 50%
 }
+
+
+
+.owl-carousel .item {
+    margin: 3px
+}
+
+.owl-carousel .item img {
+    display: block;
+    width: 100%;
+    height: auto
+}
+
+.owl-carousel .item {
+    margin: 3px
+}
+
+.owl-carousel {
+    margin-bottom: 15px
+}
