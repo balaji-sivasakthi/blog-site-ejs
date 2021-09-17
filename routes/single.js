@@ -48,15 +48,22 @@ single.post('/',(req,res)=>{
     var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
     var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
     var dateTime = date+' '+time;
-
+   
     post={
         comment:comment,
         createAt:dateTime
     }
+
+ 
     console.log(post)
+   
     db.collection('comment').doc(req.query.id).get()
+
     .then(async result=>{
-        var data = result.data()
+      if(!result.exists){
+        db.collection('comment').doc(req.query.id).set({})
+      } 
+      var data = result.data()
         console.log(data)
         data[email]=post
         console.log(data);
