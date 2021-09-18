@@ -247,7 +247,7 @@
                                                     <img src="https://www.pngall.com/wp-content/uploads/5/User-Profile-PNG-High-Quality-Image.png" alt="" class="rounded-circle">
                                                 </a>
                                                 <div class="media-body">
-                                                    <h4 class="media-heading user_name"><%=e.user%><small><%=e.date%></small></h4>
+                                                    <h4 class="media-heading user_name"><%=e.user%><small><%=e.date.toDate().toString().slice(0,24)%></small></h4>
                                                     <p><%=e.comment%></p>
                                                     <!-- <a href="#" class="btn btn-primary btn-sm">Reply</a> -->
                                                 </div>
@@ -306,7 +306,7 @@
                                         <a href="/single?id=<%=blog[2].id%>" class="list-group-item list-group-item-action flex-column align-items-start">
                                             <div class="w-100 justify-content-between">
                                                 <img src="<%=blog[2].banner%>" alt="" class="img-fluid float-left">
-                                                <h5 class="mb-1"><%=(blog[1].title).slice(0,30)%>...</h5>
+                                                <h5 class="mb-1"><%=(blog[2].title).slice(0,30)%>...</h5>
                                                 <small><%=blog[2].date.toDate().toString().slice(0,24)%></small>
                                             </div>
                                         </a>
