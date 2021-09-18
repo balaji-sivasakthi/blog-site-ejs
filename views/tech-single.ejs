@@ -69,7 +69,7 @@
                                 <h3><%=data.title%></h3>
 
                                 <div class="blog-meta big-meta">
-                                    <small><a href="/single" title=""><%=data.date%></a></small>
+                                    <small><a href="/single" title=""><%=data.date.toDate().toString().slice(0,24)%></a></small>
                                     <small><a href="/author" title="">by <%=author.name%></a></small>
                                     <small><a href="#" title=""><i class="fa fa-eye"></i> <%=data.views%></a></small>
                                 </div><!-- end meta -->
@@ -207,7 +207,7 @@
                                             <div class="blog-meta">
                                                 <h4><a href="/single" title=""><%=blog[4].title%></a></h4>
                                                 <small><p><%=blog[4].tag%></p></small>
-                                                <small><p><%=blog[4].date%></p></small>
+                                                <small><p><%=blog[4].date.toDate().toString().slice(0,24)%></p></small>
                                             </div><!-- end meta -->
                                         </div><!-- end blog-box -->
                                     </div><!-- end col -->
@@ -225,7 +225,7 @@
                                             <div class="blog-meta">
                                                 <h4><a href="/single" title=""><%=blog[5].title%></a></h4>
                                                 <small><p><%=blog[5].tag%></p></small>
-                                                <small><p><%=blog[5].date%></p></small>
+                                                <small><p><%=blog[5].date.toDate().toString().slice(0,24)%></p></small>
                                             </div><!-- end meta -->
                                         </div><!-- end blog-box -->
                                     </div><!-- end col -->
@@ -293,21 +293,21 @@
                                             <div class="w-100 justify-content-between">
                                                 <img src="<%=blog[0].banner%>" alt="" class="img-fluid float-left">
                                                 <h5 class="mb-1"><%=(blog[0].title).slice(0,30)%>...</h5>
-                                                <small><%=blog[0].date%></small>
+                                                <small><%=blog[0].date.toDate().toString().slice(0,24)%></small>
                                             </div>
                                         </a>
                                         <a href="/single?id=<%=blog[1].id%>" class="list-group-item list-group-item-action flex-column align-items-start">
                                             <div class="w-100 justify-content-between">
                                                 <img src="<%=blog[1].banner%>" alt="" class="img-fluid float-left">
                                                 <h5 class="mb-1"><%=(blog[1].title).slice(0,30)%>...</h5>
-                                                <small><%=blog[1].date%></small>
+                                                <small><%=blog[1].date.toDate().toString().slice(0,24)%></small>
                                             </div>
                                         </a>
                                         <a href="/single?id=<%=blog[2].id%>" class="list-group-item list-group-item-action flex-column align-items-start">
                                             <div class="w-100 justify-content-between">
                                                 <img src="<%=blog[2].banner%>" alt="" class="img-fluid float-left">
                                                 <h5 class="mb-1"><%=(blog[1].title).slice(0,30)%>...</h5>
-                                                <small><%=blog[2].date%></small>
+                                                <small><%=blog[2].date.toDate().toString().slice(0,24)%></small>
                                             </div>
                                         </a>
                                     </div>
