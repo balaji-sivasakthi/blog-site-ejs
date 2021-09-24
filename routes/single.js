@@ -1,7 +1,7 @@
 const express = require('express')
 const single =express.Router()
 const db = require('../config').firestore()
-
+const fb = require('../config')
 const getcomment =require('../Modules/comment')
 const commentWithName = require('../Modules/commentWithName')
 const getAuthor = require('../Modules/author')
@@ -44,19 +44,24 @@ single.post('/',(req,res)=>{
     comment = req.body.comment
     var post = {}
 
-    var today = new Date();
-    var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-    var dateTime = date+' '+time;
-
+    
+    var dateTime = fb.firestore.Timestamp.now()
+   
     post={
         comment:comment,
         createAt:dateTime
     }
+
+ 
     console.log(post)
+   
     db.collection('comment').doc(req.query.id).get()
+
     .then(async result=>{
-        var data = result.data()
+      if(!result.exists){
+        db.collection('comment').doc(req.query.id).set({})
+      } 
+      var data = result.data()
         console.log(data)
         data[email]=post
         console.log(data);
@@ -70,6 +75,8 @@ single.post('/',(req,res)=>{
 
 
 })
+
+
 
 
 module.exports = single

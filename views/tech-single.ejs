@@ -59,7 +59,7 @@
                         <div class="page-wrapper">
                             <div class="blog-title-area text-center">
                                 <ol class="breadcrumb hidden-xs-down">
-                                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                    <li class="breadcrumb-item"><a href="/">Home</a></li>
                                     <li class="breadcrumb-item"><a href="#">Blog</a></li>
                                     <li class="breadcrumb-item active"><%=data.title%></li>
                                 </ol>
@@ -69,7 +69,7 @@
                                 <h3><%=data.title%></h3>
 
                                 <div class="blog-meta big-meta">
-                                    <small><a href="/single" title=""><%=data.date%></a></small>
+                                    <small><a href="/single" title=""><%=data.date.toDate().toString().slice(0,24)%></a></small>
                                     <small><a href="/author" title="">by <%=author.name%></a></small>
                                     <small><a href="#" title=""><i class="fa fa-eye"></i> <%=data.views%></a></small>
                                 </div><!-- end meta -->
@@ -197,7 +197,7 @@
                                     <div class="col-lg-6">
                                         <div class="blog-box">
                                             <div class="post-media">
-                                                <a href="/single" title="">
+                                                <a href="/single?id=<%=blog[4].id%>" title="">
                                                     <img src="<%=blog[4].banner%>" alt="" class="img-fluid">
                                                     <div class="hovereffect">
                                                         <span class=""></span>
@@ -205,9 +205,9 @@
                                                 </a>
                                             </div><!-- end media -->
                                             <div class="blog-meta">
-                                                <h4><a href="/single" title=""><%=blog[4].title%></a></h4>
+                                                <h4><a href="/single?id=<%=blog[4].id%>" title=""><%=blog[4].title%></a></h4>
                                                 <small><p><%=blog[4].tag%></p></small>
-                                                <small><p><%=blog[4].date%></p></small>
+                                                <small><p><%=blog[4].date.toDate().toString().slice(0,24)%></p></small>
                                             </div><!-- end meta -->
                                         </div><!-- end blog-box -->
                                     </div><!-- end col -->
@@ -215,7 +215,7 @@
                                    <div class="col-lg-6">
                                         <div class="blog-box">
                                             <div class="post-media">
-                                                <a href="/single" title="">
+                                                <a href="/single?id=<%=blog[5].id%>" title="">
                                                     <img src="<%=blog[5].banner%>" alt="" class="img-fluid">
                                                     <div class="hovereffect">
                                                         <span class=""></span>
@@ -223,9 +223,9 @@
                                                 </a>
                                             </div><!-- end media -->
                                             <div class="blog-meta">
-                                                <h4><a href="/single" title=""><%=blog[5].title%></a></h4>
+                                                <h4><a href="/single?id=<%=blog[5].id%>" title=""><%=blog[5].title%></a></h4>
                                                 <small><p><%=blog[5].tag%></p></small>
-                                                <small><p><%=blog[5].date%></p></small>
+                                                <small><p><%=blog[5].date.toDate().toString().slice(0,24)%></p></small>
                                             </div><!-- end meta -->
                                         </div><!-- end blog-box -->
                                     </div><!-- end col -->
@@ -247,7 +247,7 @@
                                                     <img src="https://www.pngall.com/wp-content/uploads/5/User-Profile-PNG-High-Quality-Image.png" alt="" class="rounded-circle">
                                                 </a>
                                                 <div class="media-body">
-                                                    <h4 class="media-heading user_name"><%=e.user%><small><%=e.date%></small></h4>
+                                                    <h4 class="media-heading user_name"><%=e.user%><small><%=e.date.toDate().toString().slice(0,24)%></small></h4>
                                                     <p><%=e.comment%></p>
                                                     <!-- <a href="#" class="btn btn-primary btn-sm">Reply</a> -->
                                                 </div>
@@ -266,9 +266,9 @@
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <form method="post" class="form-wrapper">
-                                            <input type="text" class="form-control" name="name" placeholder="Your name">
-                                            <input type="text" class="form-control" name="email" placeholder="Email address">
-                                            <textarea class="form-control"          name ="comment" placeholder="Your comment"></textarea>
+                                            <input type="text" class="form-control" name="name" required placeholder="Your name">
+                                            <input type="text" class="form-control" name="email" required placeholder="Email address">
+                                            <textarea class="form-control"          name ="comment" required placeholder="Your comment"></textarea>
                                             <button type="submit" class="btn btn-primary">Submit Comment</button>
                                         </form>
                                     </div>
@@ -293,21 +293,21 @@
                                             <div class="w-100 justify-content-between">
                                                 <img src="<%=blog[0].banner%>" alt="" class="img-fluid float-left">
                                                 <h5 class="mb-1"><%=(blog[0].title).slice(0,30)%>...</h5>
-                                                <small><%=blog[0].date%></small>
+                                                <small><%=blog[0].date.toDate().toString().slice(0,24)%></small>
                                             </div>
                                         </a>
                                         <a href="/single?id=<%=blog[1].id%>" class="list-group-item list-group-item-action flex-column align-items-start">
                                             <div class="w-100 justify-content-between">
                                                 <img src="<%=blog[1].banner%>" alt="" class="img-fluid float-left">
                                                 <h5 class="mb-1"><%=(blog[1].title).slice(0,30)%>...</h5>
-                                                <small><%=blog[1].date%></small>
+                                                <small><%=blog[1].date.toDate().toString().slice(0,24)%></small>
                                             </div>
                                         </a>
                                         <a href="/single?id=<%=blog[2].id%>" class="list-group-item list-group-item-action flex-column align-items-start">
                                             <div class="w-100 justify-content-between">
                                                 <img src="<%=blog[2].banner%>" alt="" class="img-fluid float-left">
-                                                <h5 class="mb-1"><%=(blog[1].title).slice(0,30)%>...</h5>
-                                                <small><%=blog[2].date%></small>
+                                                <h5 class="mb-1"><%=(blog[2].title).slice(0,30)%>...</h5>
+                                                <small><%=blog[2].date.toDate().toString().slice(0,24)%></small>
                                             </div>
                                         </a>
                                     </div>

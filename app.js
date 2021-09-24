@@ -10,7 +10,7 @@ const singleRouter = require('./routes/single')
 const getblog = require('./Modules/blog')
 const getreviews = require('./Modules/reviews')
 const gettag = require('./Modules/tag')
-
+const db = require('./config').firestore()
 app.use(express.urlencoded({extended:true}))
 app.use(express.json())
 
@@ -47,6 +47,12 @@ app.get('/' ,async (req , res)=>{
   
    
 
+})
+app.post('/sub',(req,res)=>{
+   var email = req.body.email
+   db.collection('subscribers').doc(email).set({email:email})
+  console.log(req.body)
+  res.redirect('/')
 })
 
 app.listen(process.env.PORT||5000,()=>{console.log("Running...."+process.env.PORT||5000)})

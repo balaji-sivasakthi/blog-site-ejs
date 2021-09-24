@@ -63,9 +63,9 @@
                                  <div class="shadoweffect">
                                     <div class="shadow-desc">
                                         <div class="blog-meta">
-                                            <span class="bg-orange"><a href="/<%=data[0].tag%>" title=""><%=(data[1].tag).toUpperCase()%></a></span>
+                                            <span class="bg-orange"><a href="/<%=data[0].tag%>" title=""><%=(data[0].tag).toUpperCase()%></a></span>
                                             <h4><a href="/single?id=<%=data[0].id%>" title=""><%=data[0].title%></a></h4>
-                                            <small><a href="/single?id=<%=data[0].id%>" title=""><%=data[0].date%></a></small>
+                                            <small><a href="/single?id=<%=data[0].id%>" title=""><%=data[0].date.toDate().toString().slice(0,24)%></a></small>
                                             <small><a href="/author" title="">by <%=data[0].by%></a></small>
                                         </div><!-- end meta -->
                                     </div><!-- end shadow-desc -->
@@ -82,7 +82,7 @@
                                         <div class="blog-meta">
                                             <span class="bg-orange"><a href="/<%=(data[1].tag)%>" title=""><%=(data[1].tag).toUpperCase()%></a></span>
                                             <h4><a href="/single?id=<%=data[1].id%>" title=""><%=data[1].title%></a></h4>
-                                            <small><a href="/single?id=<%=data[1].id%>" title=""><%=data[1].date%></a></small>
+                                            <small><a href="/single?id=<%=data[1].id%>" title=""><%=data[1].date.toDate().toString().slice(0,24)%></a></small>
                                             <small><a href="/author" title="">by <%=data[1].by%></a></small>
                                         </div><!-- end meta -->
                                     </div><!-- end shadow-desc -->
@@ -103,38 +103,12 @@
                                 <h4 class="pull-left">Recent News <a href="#"><i class="fa fa-rss"></i></a></h4>
                             </div><!-- end blog-top -->
 
-                            <% for(let i =2; i<6;i++){%>
-                            <section class="blog-list clearfix">
-                                <div class="blog-box row">
-                                    <div class="col-md-4">
-                                        <div class="post-media">
-                                            <a href="/single?id=<%=data[i].id%>" title="">
-                                                <img src="<%=data[i].banner%>" alt="" class="img-fluid">
-                                                <div class="hovereffect"></div>
-                                            </a>
-                                        </div><!-- end media -->
-                                    </div><!-- end col -->
-
-                                    <div class="blog-meta big-meta col-md-8">
-                                        <h4><a href="/single?id=<%=data[i].id%>" title=""><%=(data[i].title)%></a></h4>
-                                        <p><%=data[i].short%></p>
-                                        <small class="firstsmall"><a class="bg-orange" href="/gadget" title=""><%=data[i].tag%></a></small>
-                                        <small><a href="/single?id=<%=data[i].id%>" title=""><%=data[i].date%></a></small>
-                                        <small><a href="/author" title="">by <%=data[i].by%></a></small>
-                                        <small><a href="/single?id=<%=data[i].id%>" title=""><i class="fa fa-eye"></i><%=data[i].views%></a></small>
-                                    </div><!-- end meta -->
-                                </div><!-- end blog-box -->
-
-                               
-                            
-                                <hr class="invis">
-
-                                  <%}%>
+                           
 
                                 
 
                                 <hr class="invis">
-                                <% for(let i =6; i<11;i++){%>
+                                <% for(let i =2; i<11;i++){%>
                                     <section class="blog-list clearfix">
                                         <div class="blog-box row">
                                             <div class="col-md-4">
@@ -150,7 +124,7 @@
                                                 <h4><a href="/single?id=<%=data[i].id%>" title=""><%=data[i].title%></a></h4>
                                                 <p><%=data[i].short%></p>
                                                 <small class="firstsmall"><a class="bg-orange" href="/gadget" title=""><%=data[i].tag%></a></small>
-                                                <small><a href="/single" title=""><%=data[i].date%></a></small>
+                                                <small><a href="/single" title=""><%=data[i].date.toDate().toString().slice(0,24)%></a></small>
                                                 <small><a href="/author" title="">by <%=data[i].by%></a></small>
                                                 <small><a href="/single" title=""><i class="fa fa-eye"></i><%=data[i].views%></a></small>
                                             </div><!-- end meta -->
@@ -201,7 +175,7 @@
                                             <div class="w-100 justify-content-between">
                                                 <img src="<%=data[0].banner%>" alt="" class="img-fluid float-left">
                                                 <h5 class="mb-1"><%=(data[0].title).slice(0,30)%>...</h5>
-                                                <small><%=data[0].date%></small>
+                                                <small><%=data[0].date.toDate().toString().slice(0,24)%></small>
                                             </div>
                                         </a>
 
@@ -209,7 +183,7 @@
                                             <div class="w-100 justify-content-between">
                                                 <img src="<%=data[1].banner%>" alt="" class="img-fluid float-left">
                                                 <h5 class="mb-1"><%=(data[1].title).slice(0,30)%>...</h5>
-                                                <small><%=data[1].date%></small>
+                                                <small><%=data[1].date.toDate().toString().slice(0,24)%></small>
                                             </div>
                                         </a>
 
@@ -217,7 +191,7 @@
                                             <div class="w-100 last-item justify-content-between">
                                                 <img src="<%=data[2].banner%>" alt="" class="img-fluid float-left">
                                                 <h5 class="mb-1"><%=(data[2].title).slice(0,30)%>...</h5>
-                                                <small><%=data[2].date%></small>
+                                                <small><%=data[2].date.toDate().toString().slice(0,24)%></small>
                                             </div>
                                         </a>
                                     </div>

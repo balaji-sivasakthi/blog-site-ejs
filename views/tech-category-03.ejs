@@ -59,7 +59,7 @@
                     </div><!-- end col -->
                     <div class="col-lg-4 col-md-4 col-sm-12 hidden-xs-down hidden-sm-down">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item"><a href="/">Home</a></li>
                             <li class="breadcrumb-item"><a href="#">Blog</a></li>
                             <li class="breadcrumb-item active">Reviews</li>
                         </ol>
@@ -89,7 +89,7 @@
                                     <div class="blog-meta big-meta col-md-8">
                                         <h4><a href="/single?id=<%=e.id%>" title=""><%=e.title%></p>
                                         <small class="firstsmall"><a class="bg-orange" href="/reviews" title=""><%=e.tag%></a></small>
-                                        <small><a href="/single" title=""><%=e.date%></a></small>
+                                        <small><a href="/single" title=""><%=e.date.toDate().toString().slice(0,24)%></a></small>
                                         <small><a href="/author" title="">By <%=e.by%></a></small>
                                         <small><a href="/single" title=""><i class="fa fa-eye"></i> <%=e.views%></a></small>
                                     </div><!-- end meta -->
@@ -161,7 +161,7 @@
                                             <div class="w-100 justify-content-between">
                                                 <img src="<%=data[0].banner%>" alt="" class="img-fluid float-left">
                                                 <h5 class="mb-1"><%=(data[0].title).slice(0,30)%>...</h5>
-                                                <small><%=data[0].date%></small>
+                                                <small><%=data[0].date.toDate().toString().slice(0,24)%></small>
                                             </div>
                                         </a>
 
@@ -169,7 +169,7 @@
                                             <div class="w-100 justify-content-between">
                                                 <img src="<%=data[1].banner%>" alt="" class="img-fluid float-left">
                                                 <h5 class="mb-1"><%=(data[1].title).slice(0,30)%>...</h5>
-                                                <small><%=data[1].date%></small>
+                                                <small><%=data[1].date.toDate().toString().slice(0,24)%></small>
                                             </div>
                                         </a>
 
@@ -177,7 +177,7 @@
                                             <div class="w-100 last-item justify-content-between">
                                                 <img src="<%=data[2].banner%>" alt="" class="img-fluid float-left">
                                                 <h5 class="mb-1"><%=(data[2].title).slice(0,30)%>...</h5>
-                                                <small><%=data[2].date%></small>
+                                                <small><%=data[2].date.toDate().toString().slice(0,24)%></small>
                                             </div>
                                         </a>
                                     </div>
