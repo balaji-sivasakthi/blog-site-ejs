@@ -1128,8 +1128,8 @@ div.tab button:hover {
 }
 
 .blog-meta small:after {
-    content: "/";
-    padding-left: 1rem;
+    /* content: "/";
+    padding-left: 1rem; */
 }
 
 .blog-meta small:last-child:after {
