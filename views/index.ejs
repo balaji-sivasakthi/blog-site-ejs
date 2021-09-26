@@ -66,7 +66,7 @@
                                             <span class="bg-orange"><a href="/<%=data[0].tag%>" title=""><%=(data[0].tag).toUpperCase()%></a></span>
                                             <h4><a href="/single?id=<%=data[0].id%>" title=""><%=data[0].title%></a></h4>
                                             <small><a href="/single?id=<%=data[0].id%>" title=""><%=data[0].date.toDate().toString().slice(0,24)%></a></small>
-                                            <small><a href="/author" title="">by <%=data[0].by%></a></small>
+                                            <small>by <%=data[0].by%></small>
                                         </div><!-- end meta -->
                                     </div><!-- end shadow-desc -->
                                 </div><!-- end shadow -->
@@ -83,7 +83,7 @@
                                             <span class="bg-orange"><a href="/<%=(data[1].tag)%>" title=""><%=(data[1].tag).toUpperCase()%></a></span>
                                             <h4><a href="/single?id=<%=data[1].id%>" title=""><%=data[1].title%></a></h4>
                                             <small><a href="/single?id=<%=data[1].id%>" title=""><%=data[1].date.toDate().toString().slice(0,24)%></a></small>
-                                            <small><a href="/author" title="">by <%=data[1].by%></a></small>
+                                            <small>by <%=data[1].by%></small>
                                         </div><!-- end meta -->
                                     </div><!-- end shadow-desc -->
                                 </div><!-- end shadow -->
@@ -124,9 +124,9 @@
                                                 <h4><a href="/single?id=<%=data[i].id%>" title=""><%=data[i].title%></a></h4>
                                                 <p><%=data[i].short%></p>
                                                 <small class="firstsmall"><a class="bg-orange" href="/gadget" title=""><%=data[i].tag%></a></small>
-                                                <small><a href="/single" title=""><%=data[i].date.toDate().toString().slice(0,24)%></a></small>
-                                                <small><a href="/author" title="">by <%=data[i].by%></a></small>
-                                                <small><a href="/single" title=""><i class="fa fa-eye"></i><%=data[i].views%></a></small>
+                                                <small><a href="/single?id=<%=data[i].id%>" title=""><%=data[i].date.toDate().toString().slice(0,24)%></a></small>
+                                                <small><a href="/single?id=<%=data[i].id%>" title="">by <%=data[i].by%></a></small>
+                                                <small><a href="/single?id=<%=data[i].id%>" title=""><i class="fa fa-eye"></i><%=data[i].views%></a></small>
                                             </div><!-- end meta -->
                                         </div><!-- end blog-box -->
         
