@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const blogRouter = require('./routes/blog')
-const authorRouter = require('./routes/author')
+// const authorRouter = require('./routes/author')
 const GadgetRouter = require('./routes/gadget')
 //  const VideoRouter = require('./routes/video')
 const ReviewsRouter = require('./routes/reviews')
@@ -20,7 +20,7 @@ app.use('/views',express.static(__dirname+'/views'))
 app.use('/',express.static(__dirname+'/Public'))
 
 
-app.use('/author',authorRouter)
+// app.use('/author',authorRouter)
 //app.use('/gadget',GadgetRouter)
 // app.use('/video',VideoRouter)
  app.use('/reviews',ReviewsRouter)
@@ -51,7 +51,7 @@ app.get('/' ,async (req , res)=>{
 app.post('/sub',(req,res)=>{
    var email = req.body.email
    db.collection('subscribers').doc(email).set({email:email})
-  console.log(req.body)
+  
   res.redirect('/')
 })
 

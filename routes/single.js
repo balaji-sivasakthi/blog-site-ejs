@@ -25,7 +25,7 @@ single.get('/',async (req,res)=>{
         const author  = await getAuthor(data.author)
         const blog = await getBlog(8)
         const tag = await gettag()
-        console.log(blog)
+        
         // console.log("===Commment Name with user details=====")
         //console.log(await commentWithName(comment))
         
@@ -53,7 +53,7 @@ single.post('/',(req,res)=>{
     }
 
  
-    console.log(post)
+    // console.log(post)
    
     db.collection('comment').doc(req.query.id).get()
 
@@ -64,7 +64,7 @@ single.post('/',(req,res)=>{
       var data = result.data()
         console.log(data)
         data[email]=post
-        console.log(data);
+        // console.log(data);
         var users= await db.collection('users').get()
         
         db.collection('users').doc(email).set({name:name,email:email})
