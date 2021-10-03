@@ -29,7 +29,7 @@ app.use('/single',singleRouter)
 
 app.get('/' ,async (req , res)=>{
    
-    var data = await getblog(15)
+    var data = await getblog(20)
    
    var reviews = await getreviews(3)
    var tag = await gettag()
